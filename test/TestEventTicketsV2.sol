@@ -248,47 +248,4 @@ contract TestEventTicketsV2 {
         Assert.equal(eventData.stateSales, _expSales, "Ticket sales should be 999"); // Verifies event state, sales
         Assert.equal(eventData.stateIsOpen, _expIsOpen, "Event should be open"); // Verifies event state, isOpen
     }
-
-/*
-    // test for ending multiple sales
-    function testForEndingMultipleSales() public {
-        string memory eventDesc = "Launch Party 1"; // Declare eventDescription
-        string memory eventWeb = "https://www.besticoever.net"; // Declare eventWebsite
-        uint eventTotalTickets = 100; // Declare eventTotalTickets
-
-        uint resultOne = contractToTestV2.addEvent(eventDesc, eventWeb, eventTotalTickets); // Owner tries to add first event
-        Assert.equal(resultOne, 0, "Owner could not add a new event");
-
-        string memory _eventDesc = "Launch Party 2"; // Declare eventDescription
-        string memory _eventWeb = "https://www.evenbetterico.net"; // Declare eventWebsite
-        uint _eventTotalTickets = 1000; // Declare eventTotalTickets
-
-        uint resultTwo = contractToTestV2.addEvent(_eventDesc, _eventWeb, _eventTotalTickets); // Owner tries to add second event
-        Assert.equal(resultTwo, 1, "Owner could not add a new event");
-
-        uint eventID = 0; // Client eventID for tickets purchase
-
-        bool resultThree = proxyClient.proxyEndSale(eventID); // Not contract owner tries to end sale
-        Assert.isFalse(resultThree, "Not the contract owner ended the sale");
-
-        uint _eventID = 1; // Client eventID for tickets purchase
-
-        bool resultFour = proxyClient.proxyEndSale(_eventID); // Not contract owner tries to end sale
-        Assert.isFalse(resultFour, "Not the contract owner ended the sale");
-
-        uint expSales = 0; bool expIsOpen = true;
-
-        Assert.equal(getEventState(eventID), true, "Could not get retrieve event state"); // Verifies execution of getEventState
-        Assert.equal(eventData.stateSales, expSales, "Ticket sales should be zero"); // Verifies event state, sales
-        Assert.equal(eventData.stateIsOpen, expIsOpen, "Event should be open"); // Verifies event state, isOpen
-
-        uint _expSales = 0; bool _expIsOpen = true;
-
-        Assert.equal(getEventState(_eventID), true, "Could not get retrieve event state"); // Verifies execution of getEventState
-        Assert.equal(eventData.stateSales, _expSales, "Ticket sales should be zero"); // Verifies event state, sales
-        Assert.equal(eventData.stateIsOpen, _expIsOpen, "Event should be open"); // Verifies event state, isOpen
-    }
-*/
-
-
 }

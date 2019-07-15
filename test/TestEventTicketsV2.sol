@@ -249,6 +249,7 @@ contract TestEventTicketsV2 {
         Assert.equal(eventData.stateIsOpen, _expIsOpen, "Event should be open"); // Verifies event state, isOpen
     }
 
+/*
     // test for ending multiple sales
     function testForEndingMultipleSales() public {
         string memory eventDesc = "Launch Party 1"; // Declare eventDescription
@@ -287,7 +288,7 @@ contract TestEventTicketsV2 {
         Assert.equal(eventData.stateSales, _expSales, "Ticket sales should be zero"); // Verifies event state, sales
         Assert.equal(eventData.stateIsOpen, _expIsOpen, "Event should be open"); // Verifies event state, isOpen
     }
-
+*/
 
 
 }
